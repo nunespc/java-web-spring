@@ -20,17 +20,26 @@ public class UsuarioControle {
 	@Autowired
 	private UsuarioRepositorio repositorio;
 	
+	/*Endpoints para buscar todos os usuarios do 
+	banco de dados.*/
+	
 	@GetMapping
 	public List<Usuario> findAll(){
 		List<Usuario> resultado = repositorio.findAll();
 		return resultado;
 	}	
 	
+	/*Endpoints para buscar o usuatrio do banco de dados 
+	 	infomado pelo codigo(id).*/
+	
 	@GetMapping(value = "/{id}")
 	public Usuario findById(@PathVariable Long id){
 		Usuario resultado = repositorio.findById(id).get();
 		return resultado;
 	}
+	
+	/*Endpoints para inserio o usuario do banco de dados 
+	 	atraves do postman .*/
 	
 	@PostMapping
 	public Usuario insert(@RequestBody Usuario usuario){
