@@ -3,6 +3,7 @@ package com.example.userdept.controle;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -20,7 +21,7 @@ public class UsuarioControle {
 	@Autowired
 	private UsuarioRepositorio repositorio;
 	
-	/*Endpoints para buscar todos os usuarios do 
+	/*Thread para buscar todos os usuarios do 
 	banco de dados.*/
 	
 	@GetMapping
@@ -29,7 +30,7 @@ public class UsuarioControle {
 		return resultado;
 	}	
 	
-	/*Endpoints para buscar o usuatrio do banco de dados 
+	/*Thread para buscar o usuatrio do banco de dados 
 	 	infomado pelo codigo(id).*/
 	
 	@GetMapping(value = "/{id}")
@@ -38,7 +39,7 @@ public class UsuarioControle {
 		return resultado;
 	}
 	
-	/*Endpoints para inserio o usuario do banco de dados 
+	/*Thread para inseri o usuario do banco de dados 
 	 	atraves do postman .*/
 	
 	@PostMapping
